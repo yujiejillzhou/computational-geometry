@@ -5,10 +5,23 @@
 </head>
 <body>
    <canvas id="1stCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
-    
+   <button type = "button" id="DelaunayTri">Delaunay Triangulation</button>
 
    <script src="https://d3js.org/d3-voronoi.v1.min.js"></script>
-   <script src=https://github.com/yujiejillzhou/computational-geometry/blob/master/test.js></script>
+   <script src="/Users/apple/Desktop/computational-geometry/test.js"></script>
+   <script>
+     var voronoi = d3.voronoi();
+     document.getElementById("DelaunayTri").addEventListener('click', DelaunayTri,false); 
+
+     function DelaunayTri(event){
+       var tri = voronoi.triangles(points);
+       drawTriangles(tri);
+
+        // console.log(tri[0][0],tri[0][1],tri[0][2]);
+     }
+
+     //console.log("points");
+   </script>
 
 
 
